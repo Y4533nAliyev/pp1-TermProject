@@ -19,7 +19,6 @@ typedef struct Book{
   char *author;
   int year;
   int id;
-  bool isAvaible;
   genre_t genre;
 } book_t;
 
@@ -29,7 +28,6 @@ typedef struct CD{
   char *author;
   int year;
   int id;
-  bool isAvaible;
   capacity_t capacity;
 } cd_t;
 
@@ -38,7 +36,6 @@ typedef struct Magazine{
   char *title;
   int year;
   int id;
-  bool isAvaible;
 } magazine_t;
 
 
@@ -67,6 +64,6 @@ typedef struct Member{
   bool isVIP;
 } member_t;
 
-libraryitem_t *new_book(char *title, char *author, int year, int id, bool isAvaible, genre_t genre);
-libraryitem_t *new_cd(char *title, char *author, int year, int id, bool isAvaible, capacity_t capacity);
-libraryitem_t *new_magazine(char *title, int year, int id, bool isAvaible); 
+libraryitem_t *new_book(char *title, char *author, int year, int id, genre_t genre);
+libraryitem_t *new_cd(char *title, char *author, int year, int id, capacity_t capacity);
+libraryitem_t *new_magazine(char *title, int year, int id); 

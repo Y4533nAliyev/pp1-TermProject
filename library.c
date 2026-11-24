@@ -1,8 +1,7 @@
 #include "library.h"
 #include <stdlib.h>
-#include <stdbool.h>
 
-libraryitem_t *new_book(char *title, char *author, int year, int id, bool isAvaible, genre_t genre){
+libraryitem_t *new_book(char *title, char *author, int year, int id, genre_t genre){
   libraryitem_t *book = malloc(sizeof(libraryitem_t)); // allocate space for our library item
   if(book == NULL){ // if it is NULL, return NULL
     return NULL;
@@ -13,14 +12,13 @@ libraryitem_t *new_book(char *title, char *author, int year, int id, bool isAvai
     .author = author,
     .year = year,
     .id = id,
-    .isAvaible = isAvaible,
     .genre = genre};
 
   return book;  
 }
 
 
-libraryitem_t *new_cd(char *title, char *author, int year, int id, bool isAvaible, capacity_t capacity){
+libraryitem_t *new_cd(char *title, char *author, int year, int id,capacity_t capacity){
   libraryitem_t *cd = malloc(sizeof(libraryitem_t));
   if(cd == NULL){
     return NULL;
@@ -32,13 +30,12 @@ libraryitem_t *new_cd(char *title, char *author, int year, int id, bool isAvaibl
     .author = author,
     .year = year,
     .id = id,
-    .isAvaible = isAvaible,
     .capacity = capacity};
 
   return cd;
 }
 
-libraryitem_t *new_magazine(char *title, int year, int id, bool isAvaible){
+libraryitem_t *new_magazine(char *title, int year, int id){
   libraryitem_t *magazine = malloc(sizeof(libraryitem_t));
   if(magazine == NULL){
     return NULL;
@@ -48,8 +45,7 @@ libraryitem_t *new_magazine(char *title, int year, int id, bool isAvaible){
   magazine->data.magazine = (magazine_t){
     .title = title,
     .year = year,
-    .id = id,
-    .isAvaible = isAvaible,
+    .id = id
   };
 
   return magazine;
