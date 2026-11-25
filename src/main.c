@@ -8,9 +8,9 @@
 int main(int argc, char **argv){
   (void)argc; // get rid of error
   if(argv[1] == NULL){
-    printf("Usage: ./library <book title> <book author> <book year> <book id> <book genre>\n");
-    printf("       ./library <cd title> <cd author> <cd year> <cd id> <cd capacity>\n");
-    printf("       ./library <magazine title> <magazine year> <magazine id>\n");
+    printf("Usage: ./library book <book title> <book author> <book year> <book id> <book genre>\n");
+    printf("       ./library cd <cd title> <cd author> <cd year> <cd id> <cd capacity>\n");
+    printf("       ./library magazine <magazine title> <magazine year> <magazine id>\n");
     return EXIT_FAILURE;
   }
   if(strcmp(argv[1], "book") == 0){

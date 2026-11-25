@@ -1,8 +1,17 @@
-library:
-	@gcc -Wall -Wextra -lm -o library main.c library.c && ./library
-book:
-	@gcc -Wall -Wextra -lm -o library main.c library.c && ./library book book
-cd:
-	@gcc -Wall -Wextra -lm -o library main.c library.c && ./library cd cd
-magazine:
-	@gcc -Wall -Wextra -lm -o library main.c library.c && ./library magazine magazine
+CC = gcc
+CFLAGS = -Wall -Wextra -Iinclude -lm
+
+# Point wildcard to the src directory
+SRCS = $(wildcard src/*.c)
+OBJS = $(SRCS:.c=.o)
+TARGET = my_program
+
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET)
+
+# Compiles src/file.c into src/file.o
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
